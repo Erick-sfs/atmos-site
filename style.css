@@ -106,3 +106,56 @@ section.active {
   opacity: 1;
   transform: translateY(0);
 }
+.galeria {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Espaço entre as imagens */
+  margin: 40px 0;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 30%; /* Três imagens lado a lado */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Para a elevação */
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(20px); /* Efeito de entrada parecido com letras */
+  animation: slideUp 0.8s forwards; /* Faz a imagem aparecer animada */
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+  transform: translateY(-10px); /* Sobe levemente */
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  text-align: center;
+  transform: translateY(100%); /* Esconde inicialmente */
+  transition: transform 0.3s ease;
+}
+
+.card:hover .info {
+  transform: translateY(0); /* Aparece ao passar o mouse */
+}
+
