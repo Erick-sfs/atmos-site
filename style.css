@@ -1,57 +1,62 @@
-/* RESET BÁSICO */
+//* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', Helvetica, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* COR DE FUNDO DO SITE */
 body {
-  background-color: #f4f4f9;
-  color: #1f2933;
+  background-color: #f9f9fb;
+  color: #1c1c1e;
   line-height: 1.6;
 }
 
+/* CONTAINER PADRÃO */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
 /* HEADER / HERO */
-header.hero {
-  background-color: #0f172a;
-  color: #ffffff;
-  padding: 80px 20px;
+.hero {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  padding: 100px 20px;
   text-align: center;
 }
 
-header.hero h1 {
+.hero h1 {
   font-size: 3rem;
   margin-bottom: 15px;
 }
 
-header.hero p {
+.hero p {
   font-size: 1.2rem;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
-header.hero .btn {
+.hero .btn {
   display: inline-block;
   margin-top: 25px;
   padding: 15px 35px;
-  background-color: #ff6f61;
-  color: white;
+  background-color: #facc15; /* amarelo elegante */
+  color: #1c1c1e;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-header.hero .btn:hover {
-  background-color: #ff4c3b;
+.hero .btn:hover {
+  background-color: #eab308;
+  transform: scale(1.05);
 }
 
 /* SECTIONS */
 section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
+  padding: 80px 0;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -62,27 +67,21 @@ section.active {
   transform: translateY(0);
 }
 
-/* Alternância de cores */
 section:nth-child(even) {
-  background-color: #eaf0ff; /* azul muito suave em vez de cinza */
+  background-color: #eef2ff;
 }
 
-section:nth-child(odd) {
-  background-color: #ffffff;
-}
-
-/* TÍTULOS */
 section h2 {
   font-size: 2rem;
   margin-bottom: 25px;
-  color: #0f172a;
+  color: #1e40af;
 }
 
 /* TEXTOS */
 section p {
   font-size: 1.05rem;
   max-width: 800px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 /* BOTÃO / CTA */
@@ -95,49 +94,106 @@ section p {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
   background-color: #3746ab;
+  transform: scale(1.05);
 }
 
 /* FOOTER */
 footer {
-  background-color: #0f172a;
+  background-color: #1e3a8a;
   color: white;
   text-align: center;
   padding: 40px 20px;
-  margin-top: 60px;
   font-size: 0.9rem;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
-/* GALERIA DE IMAGENS CENTRALIZADA */
+/* GALERIA */
 .galeria {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
+  justify-content: center;
   gap: 30px;
-  margin: 40px 0;
-  flex-wrap: wrap; /* permite quebrar linha em telas menores */
+  flex-wrap: wrap;
+  padding: 60px 20px;
 }
 
 .card {
   position: relative;
   overflow: hidden;
-  width: 300px; /* largura fixa mais uniforme */
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   cursor: pointer;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {
   width: 100%;
-  display: block;
   height: 250px;
   object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease, opacity 0.5s e
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s forwards;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
 
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* QUADRADO TEXTO NO CARD */
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  background-color: #3b82f6; /* azul elegante */
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 0 0 15px 15px;
+  padding: 12px;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .info {
+  transform: translate(-50%, 0);
+}
+
+/* LISTAS DIFERENCIAIS */
+.diferenciais ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.diferenciais li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* RESPONSIVO */
+@media(max-width: 950px){
+  .card {
+    width: 45%;
+  }
+}
+
+@media(max-width: 600px){
+  .card {
+    width: 90%;
+  }
+}
