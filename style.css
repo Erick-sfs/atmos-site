@@ -44,3 +44,10 @@ a {
   text-decoration: none;
   border-radius: 6px;
 }
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background-color: #111;
+  color: #fff;
+}
+
