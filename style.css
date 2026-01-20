@@ -1,3 +1,126 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9fb;
+  color: #1c1c1e;
+  line-height: 1.6;
+}
+
+/* CONTAINER PADRÃO */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* HEADER / HERO */
+.hero {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a); /* azul escuro elegante */
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 35px;
+  background-color: #facc15; /* amarelo elegante */
+  color: #1c1c1e;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #eab308;
+  transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section:nth-child(even) {
+  background-color: #e5e7ff; /* azul claro suave para contraste */
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #0f172a; /* mantém legível sobre azul claro */
+}
+
+/* TEXTOS */
+section p {
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+/* BOTÃO / CTA */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #1e3a8a; /* azul escuro elegante */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0f172a; /* azul ainda mais escuro no hover */
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  background-color: #0f172a; /* azul escuro elegante */
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* GALERIA */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+}
+
 .card {
   position: relative;
   overflow: hidden;
@@ -6,6 +129,64 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
-  opacity: 0; /* começa invisível */
-  transform: translateY(20px); /* começa deslocado para baixo */
+  opacity: 0;
+  transform: translateY(20px);
 }
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* QUADRADO TEXTO NO CARD */
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  background-color: #1e3a8a; /* azul escuro elegante */
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 0 0 15px 15px;
+  padding: 12px;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .info {
+  transform: translate(-50%, 0);
+}
+
+/* LISTAS DIFERENCIAIS */
+.diferenciais ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.diferenciais li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* RESPONSIVO */
+@media(max-width: 950px){
+  .card {
+    width: 45%;
+  }
+}
+
+@media(max-width: 600px){
+  .card {
+    width: 90%;
+  }
+}
+
