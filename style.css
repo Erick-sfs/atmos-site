@@ -7,7 +7,7 @@
 }
 
 :root {
-    --vermelho: #c62828;
+    --vermelho: #222;
     --cinza-escuro: #222;
     --cinza-claro: #f5f5f5;
     --branco: #ffffff;
@@ -19,7 +19,7 @@ body {
 }
 
 .hero {
-    background-color: var(--vermelho);
+    background-color: var(--cinza-escuro);
     color: var(--branco);
     text-align: center;
     padding: 80px 20px;
@@ -37,7 +37,7 @@ body {
 .btn {
     display: inline-block;
     background-color: var(--branco);
-    color: var(--vermelho);
+    color: var(--cinza-escuro);
     padding: 12px 25px;
     text-decoration: none;
     font-weight: bold;
