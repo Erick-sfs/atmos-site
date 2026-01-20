@@ -51,7 +51,7 @@ section.active {
 
 /* ALTERNÂNCIA DE CORES (PROFISSIONAL) */
 section:nth-child(even) {
-  background-color: #f5f5f5; /* cinza claro */
+  background-color: #808080; /* cinza claro */
 }
 
 section:nth-child(odd) {
