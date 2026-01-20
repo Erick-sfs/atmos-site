@@ -1,3 +1,5 @@
+alert("JS carregou");
+
 const elements = document.querySelectorAll('.fade-up');
 
 function animateOnScroll() {
