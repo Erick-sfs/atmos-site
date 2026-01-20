@@ -8,14 +8,14 @@
 
 /* COR DE FUNDO DO SITE */
 body {
-  background-color: #f4f4f9; /* cinza bem claro elegante */
-  color: #1f2933; /* cinza escuro para textos */
+  background-color: #f4f4f9; /* cinza claro elegante */
+  color: #1f2933;
   line-height: 1.6;
 }
 
-/* HEADER (TOPO) */
+/* HEADER / HERO */
 header.hero {
-  background-color: #0f172a; /* azul escuro elegante */
+  background-color: #0f172a; /* azul escuro */
   color: #ffffff;
   padding: 80px 20px;
   text-align: center;
@@ -62,16 +62,16 @@ section.active {
   transform: translateY(0);
 }
 
-/* Alternância de cores das seções */
+/* Alternância de cores */
 section:nth-child(even) {
-  background-color: #eaeaea; /* cinza claro elegante */
+  background-color: #eaeaea;
 }
 
 section:nth-child(odd) {
   background-color: #ffffff;
 }
 
-/* TÍTULOS DAS SECTIONS */
+/* TÍTULOS */
 section h2 {
   font-size: 2rem;
   margin-bottom: 25px;
@@ -134,14 +134,16 @@ footer {
 .card img {
   width: 100%;
   display: block;
+  height: 250px; /* altura uniforme */
+  object-fit: cover;
+  border-radius: 12px;
   transition: transform 0.3s ease, opacity 0.5s ease;
   opacity: 0;
   transform: translateY(20px);
   animation: slideUp 0.8s forwards;
-  border-radius: 12px;
 }
 
-/* Efeito de entrada animado */
+/* Animação de entrada */
 @keyframes slideUp {
   to {
     opacity: 1;
@@ -155,7 +157,7 @@ footer {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* Pequeno quadrado de texto */
+/* Quadradinho de texto ao hover */
 .info {
   position: absolute;
   bottom: 0;
@@ -169,6 +171,11 @@ footer {
   transform: translateY(100%);
   transition: transform 0.3s ease;
 }
+
+.card:hover .info {
+  transform: translateY(0);
+}
+
 
 .card:hover .info {
   transform: translateY(0);
