@@ -9,7 +9,8 @@
 body {
   background-color: #f9f9fb;
   color: #1c1c1e;
-  line-height: 1.6;
+  line-height: 1.6
+  font-family: 'Poppins', sans-serif;
 }
 
 /* CONTAINER PADRÃO */
